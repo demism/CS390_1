@@ -21,6 +21,17 @@ class LinkedList {
 
 };
 
+template<class T>
+LinkedList<T>::LinkedList(T node) {
+    this->node = new Node<T>();
+    this->node->data = node.data;
+}
+
+template<class T>
+LinkedList<T>::LinkedList() {
+
+}
+
 class Person {
 
 private:
@@ -28,20 +39,8 @@ private:
     std::string name;
 
 public:
-    std::string GetId() const {
-        return id;
-    }
-
-    void SetId(std::string id) {
-        id = id;
-    }
-
-    std::string GetName() const {
-        return name;
-    }
-
-    void SetName(std::string name) {
-        name = name;
+    void setId(std::string id) {
+        this->id = id;
     }
     void printAbout();
 };
@@ -50,25 +49,7 @@ class Student : Person {
 private:
     std::string avgGrade;
     int year;
-    
-   
 public:
-     std::string GetAvgGrade() const {
-        return avgGrade;
-    }
-
-    void SetAvgGrade(std::string avgGrade) {
-        avgGrade = avgGrade;
-    }
-
-    int GetYear() const {
-        return year;
-    }
-
-    void SetYear(int year) {
-        year = year;
-    }
-
     void printAbout();
 };
 
